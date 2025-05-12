@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выбор зоны - Праздник в каждый дом</title>
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
+    }
+    
+    body {
+        color: #2d3436;
+        line-height: 1.6;
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    header {
+        background-color: #0984e3;
+        padding: 20px 0;
+        color: white;
+    }
+    
+    .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+    }
+    
+    nav ul {
+        display: flex;
+        list-style: none;
+    }
+    
+    nav ul li {
+        margin-left: 20px;
+    }
+    
+    nav ul li a {
+        color: white;
+        text-decoration: none;
+    }
+    
+    .location-details {
+        padding: 60px 0;
+    }
+    
+    .location-header {
+        margin-bottom: 40px;
+    }
+    
+    .location-header h2 {
+        color: #0984e3;
+        margin-bottom: 15px;
+    }
+    
+    .location-scheme {
+        display: flex;
+        margin-bottom: 50px;
+    }
+    
+    .scheme-container {
+        flex: 1;
+        border: 2px solid #dfe6e9;
+        padding: 25px;
+        position: relative;
+        height: 450px;
+        background-color: #f5f6fa;
+        border-radius: 8px;
+    }
+    
+    .zone {
+        position: absolute;
+        width: 110px;
+        height: 110px;
+        border: 2px solid;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s;
+        border-radius: 4px;
+        font-weight: bold;
+        text-align: center;
+    }
+    
+    .zone:hover {
+        transform: scale(1.05);
+    }
+    
+    .zone-available {
+        border-color: #00b894;
+        background-color: rgba(0, 184, 148, 0.15);
+        color: #00b894;
+    }
+    
+    .zone-booked {
+        border-color: #d63031;
+        background-color: rgba(214, 48, 49, 0.1);
+        cursor: not-allowed;
+        color: #d63031;
+    }
+    
+    .zone-selected {
+        border-color: #fdcb6e;
+        background-color: rgba(253, 203, 110, 0.3);
+        box-shadow: 0 0 15px rgba(253, 203, 110, 0.5);
+        color: #e17055;
+    }
+    
+    .zone-info {
+        width: 350px;
+        margin-left: 40px;
+        padding: 25px;
+        border: 1px solid #dfe6e9;
+        border-radius: 8px;
+        background: white;
+        box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    }
+    
+    .zone-info h3 {
+        margin-bottom: 25px;
+        color: #0984e3;
+    }
+    
+    .zone-info p {
+        margin-bottom: 18px;
+    }
+    
+    .price {
+        font-size: 28px;
+        font-weight: bold;
+        color: #e17055;
+        margin: 25px 0;
+    }
+    
+    .book-btn {
+        background-color: #e17055;
+        color: white;
+        border: none;
+        padding: 14px 24px;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 16px;
+        font-weight: bold;
+        transition: background-color 0.3s;
+    }
+    
+    .book-btn:hover {
+        background-color: #d63031;
+    }
+    
+    footer {
+        background-color: #2d3436;
+        color: white;
+        padding: 60px 0 0;
+    }
+    
+    .footer-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .footer-col {
+        flex: 0 0 30%;
+        margin-bottom: 30px;
+    }
+    
+    .footer-links {
+        list-style: none;
+    }
+    
+    .footer-links li {
+        margin-bottom: 12px;
+    }
+    
+    .footer-links a {
+        color: #b2bec3;
+        text-decoration: none;
+    }
+    
+    .copyright {
+        text-align: center;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid #636e72;
+        color: #b2bec3;
+    }
+</style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">Праздник в каждый дом</div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="#">Акции</a></li>
+                    <li><a href="search.html">Поиск</a></li>
+                    <li><a href="#">Управление бронированием</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="location-details">
+        <div class="container">
+            <div class="location-header">
+                <h2>Детский центр "Радуга"</h2>
+                <p><strong>Адрес:</strong> ул. Праздничная, 15, Москва</p>
+                <p><strong>Дата:</strong> 15.06.2023</p>
+            </div>
+            
+            <div class="location-scheme">
+                <div class="scheme-container" id="scheme">
+                    <div class="zone zone-available" style="top: 50px; left: 50px;" data-zone="1" data-price="5000">
+                        Зона 1<br>5000 ₽
+                    </div>
+                    <div class="zone zone-available" style="top: 50px; left: 200px;" data-zone="2" data-price="6000">
+                        Зона 2<br>6000 ₽
+                    </div>
+                    <div class="zone zone-booked" style="top: 50px; left: 350px;" data-zone="3" data-price="7000">
+                        Зона 3<br>7000 ₽
+                    </div>
+                    <div class="zone zone-available" style="top: 200px; left: 50px;" data-zone="4" data-price="5500">
+                        Зона 4<br>5500 ₽
+                    </div>
+                    <div class="zone zone-booked" style="top: 200px; left: 200px;" data-zone="5" data-price="6500">
+                        Зона 5<br>6500 ₽
+                    </div>
+                </div>
+                
+                <div class="zone-info">
+                    <h3>Информация о зоне</h3>
+                    <p><strong>Выбранная зона:</strong> <span id="selected-zone">Не выбрана</span></p>
+                    <p><strong>Вместимость:</strong> <span id="zone-capacity">до 15 человек</span></p>
+                    <p><strong>Особенности:</strong> <span id="zone-features">столы, стулья, доступ к кухне</span></p>
+                    <div class="price" id="zone-price">0 ₽</div>
+                    <button class="book-btn" id="book-btn" onclick="location.href='booking.html'">Перейти к бронированию</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Контакты</h3>
+                    <p>Телефон: 8 (800) 111-20-20</p>
+                    <p>Email: info@prazdnik.ru</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Навигация</h3>
+                    <ul class="footer-links">
+                        <li><a href="http://xxxxxx-m1.wsr.ru/return">Возврат</a></li>
+                        <li><a href="http://xxxxxx-m1.wsr.ru/feedback">Обратная связь</a></li>
+                        <li><a href="index.html">Главная</a></li>
+                        <li><a href="search.html">Поиск</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>О компании</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">О нас</a></li>
+                        <li><a href="#">Отзывы</a></li>
+                        <li><a href="#">Вакансии</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Праздник в каждый дом. Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const zones = document.querySelectorAll('.zone-available');
+            const selectedZone = document.getElementById('selected-zone');
+            const zonePrice = document.getElementById('zone-price');
+            const bookBtn = document.getElementById('book-btn');
+            
+            zones.forEach(zone => {
+                zone.addEventListener('click', function() {
+                    // Сброс предыдущего выбора
+                    zones.forEach(z => z.classList.remove('zone-selected'));
+                    
+                    // Установка нового выбора
+                    this.classList.add('zone-selected');
+                    
+                    // Обновление информации
+                    const zoneNum = this.getAttribute('data-zone');
+                    const price = this.getAttribute('data-price');
+                    
+                    selectedZone.textContent = `Зона ${zoneNum}`;
+                    zonePrice.textContent = `${price} ₽`;
+                    
+                    // Активация кнопки
+                    bookBtn.disabled = false;
+                });
+            });
+            
+            // Изначально кнопка неактивна
+            bookBtn.disabled = true;
+        });
+    </script>
+</body>
+</html>
